@@ -1,0 +1,6 @@
+server:
+  port: 7778
+  debug: true
+  log_level: debug # debug\panic\fatal\error\warn\warning\info\trace
+proxy:
+  target: "http://example.com"
