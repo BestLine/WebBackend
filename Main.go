@@ -16,6 +16,7 @@ func setupRoutes(app *fiber.App) {
 	app.Get("/", settings)
 	app.Post("/beeload/compare/release", PostCompareRelease)
 	app.Post("/beeload/create/bucket", PostCreateBucket)
+	app.Post("/beeload/add/version", PostAddVersion)
 	app.Get("/beeload/get/tabledatacurrenttests", GetTableDataCurrentTests)
 	app.Get("/beeload/get/bucketList", GetBucketList)
 	app.Get("/beeload/get/projectList", GetProjectList)

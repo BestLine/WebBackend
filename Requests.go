@@ -40,6 +40,19 @@ func PostCreateBucket(c *fiber.Ctx) error {
 	return nil
 }
 
+func PostAddVersion(c *fiber.Ctx) error {
+	logrus.Debug("PostAddVersion")
+	if viper.GetBool("server.debug") {
+		return c.SendString("DEBUG MODE ENABLED!\nRESULT: OK")
+	} else {
+		err := SendPostRequest(c)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 func GetTableDataCurrentTests(c *fiber.Ctx) error {
 	logrus.Debug("GetTableDataCurrentTests")
 	if viper.GetBool("server.debug") {
