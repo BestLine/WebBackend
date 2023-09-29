@@ -23,6 +23,10 @@ type VersionData struct {
 	Version string `json:"Version"`
 }
 
+type HostData struct {
+	Host string `json:"Host"`
+}
+
 type User struct {
 	ID       int
 	Username string

@@ -17,6 +17,7 @@ func setupRoutes(app *fiber.App) {
 	app.Post("/beeload/compare/release", PostCompareRelease)
 	app.Post("/beeload/create/bucket", PostCreateBucket)
 	app.Post("/beeload/add/version", PostAddVersion)
+	app.Post("/beeload/add/methodic", PostAddMethodic)
 	app.Get("/beeload/get/tabledatacurrenttests", GetTableDataCurrentTests)
 	app.Get("/beeload/get/bucketList", GetBucketList)
 	app.Get("/beeload/get/projectList", GetProjectList)
@@ -24,6 +25,7 @@ func setupRoutes(app *fiber.App) {
 	app.Get("/beeload/get/tableDataTests", GetTableDataTests)
 	app.Get("/beeload/get/tableDataStatus", GetTableDataStatus)
 	app.Get("/beeload/get/versionList", GetVersionsList)
+	app.Get("/beeload/get/hostList", GetHostList)
 }
 
 func main() {

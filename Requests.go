@@ -53,6 +53,19 @@ func PostAddVersion(c *fiber.Ctx) error {
 	return nil
 }
 
+func PostAddMethodic(c *fiber.Ctx) error {
+	logrus.Debug("PostAddMethodic")
+	if viper.GetBool("server.debug") {
+		return c.SendString("DEBUG MODE ENABLED!\nRESULT: OK")
+	} else {
+		err := SendPostRequest(c)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 func GetTableDataCurrentTests(c *fiber.Ctx) error {
 	logrus.Debug("GetTableDataCurrentTests")
 	if viper.GetBool("server.debug") {
@@ -194,6 +207,32 @@ func GetVersionsList(c *fiber.Ctx) error {
 			VersionData{Version: "3"},
 		}
 		jsonData, err := json.Marshal(versions)
+		if err != nil {
+			logrus.Error(err)
+			return c.Status(http.StatusInternalServerError).SendString("Internal Server Error")
+		}
+
+		// Отправка JSON-ответа
+		c.Set("Content-Type", "application/json")
+		return c.Send(jsonData)
+	} else {
+		err := SendGetRequest(c)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func GetHostList(c *fiber.Ctx) error {
+	logrus.Debug("GetHostList")
+	if viper.GetBool("server.debug") {
+		var hosts []interface{}
+		hosts = []interface{}{
+			HostData{Host: "https://qa.load.com"},
+			HostData{Host: "https://shit.box.ru"},
+		}
+		jsonData, err := json.Marshal(hosts)
 		if err != nil {
 			logrus.Error(err)
 			return c.Status(http.StatusInternalServerError).SendString("Internal Server Error")
