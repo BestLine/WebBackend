@@ -89,28 +89,28 @@ func GetTableDataReports(c *fiber.Ctx) error {
 	if viper.GetBool("server.debug") {
 		if bucket != "" {
 			return c.SendString("{\"count\":10,\"data\":" +
-				"[{\"application\":\"StartTime 2023-08-31 13-58 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=389557398\"}," +
-				"{\"application\":\"StartTime 2023-08-23 01-38 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=386705219\"}," +
-				"{\"application\":\"StartTime 2023-08-23 00-07 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=386705153\"}," +
-				"{\"application\":\"StartTime 2023-08-22 16-02 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=386704172\"}," +
-				"{\"application\":\"StartTime 2023-08-21 09-15 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=386698345\"}," +
-				"{\"application\":\"StartTime 2023-08-18 09-55 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=383969194\"}," +
-				"{\"application\":\"StartTime 2023-08-18 07-15 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=384617383\"}," +
-				"{\"application\":\"StartTime 2023-08-18 01-03 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=384617004\"}," +
-				"{\"application\":\"StartTime 2023-08-17 22-37 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=384616672\"}," +
-				"{\"application\":\"StartTime 2023-08-17 14-49 Max perf VLB2 0del\",\"bucket\":\"jmeter_MOCK\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=383967467\"}]}")
+				"[{\"application\":\"StartTime 2023-10-02 15-05\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409474382\"}," +
+				"{\"application\":\"StartTime 2023-10-02 14-47\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409834495\"}," +
+				"{\"application\":\"StartTime 2023-10-02 15-00 Stable Test 3 INAC 5rps\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409473677\"}," +
+				"{\"application\":\"StartTime 2023-10-02 14-39\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=408949351\"}," +
+				"{\"application\":\"StartTime 2023-10-02 14-39\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409833189\"}," +
+				"{\"application\":\"StartTime\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409473120\"}," +
+				"{\"application\":\"StartTime 2023-10-02 11-51 Stable test 18rps DOL\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409832239\"}," +
+				"{\"application\":\"StartTime 2023-09-29 10-21Stability\",\"bucket\":\"jmeter_IntergraStand_BM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409831416\"}," +
+				"{\"application\":\"StartTime 2023-10-01 11-57 COMM_LT_all_sms_email_voice_bell_250_65_15_16_tps\",\"bucket\":\"jmeter_COMM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=408945128\"}," +
+				"{\"application\":\"StartTime  SmokeCrush\",\"bucket\":\"jmeter_Pretium\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409830287\"}]}")
 		} else {
 			return c.SendString("{\"count\":10,\"data\":" +
-				"[{\"application\":\"StartTime 2023-08-31 13-58 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=389557398\"}," +
-				"{\"application\":\"StartTime 2023-08-23 01-38 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=386705219\"}," +
-				"{\"application\":\"StartTime 2023-08-23 00-07 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=386705153\"}," +
-				"{\"application\":\"StartTime 2023-08-22 16-02 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=386704172\"}," +
-				"{\"application\":\"StartTime 2023-08-21 09-15 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=386698345\"}," +
-				"{\"application\":\"StartTime 2023-08-18 09-55 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=383969194\"}," +
-				"{\"application\":\"StartTime 2023-08-18 07-15 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=384617383\"}," +
-				"{\"application\":\"StartTime 2023-08-18 01-03 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=384617004\"}," +
-				"{\"application\":\"StartTime 2023-08-17 22-37 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=384616672\"}," +
-				"{\"application\":\"StartTime 2023-08-17 14-49 Max perf VLB2 0del\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=383967467\"}]}")
+				"[{\"application\":\"StartTime 2023-10-02 15-05\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409474382\"}," +
+				"{\"application\":\"StartTime 2023-10-02 14-47\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409834495\"}," +
+				"{\"application\":\"StartTime 2023-10-02 15-00 Stable Test 3 INAC 5rps\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409473677\"}," +
+				"{\"application\":\"StartTime 2023-10-02 14-39\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=408949351\"}," +
+				"{\"application\":\"StartTime 2023-10-02 14-39\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409833189\"}," +
+				"{\"application\":\"StartTime\",\"bucket\":\"jmeter_IDP\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409473120\"}," +
+				"{\"application\":\"StartTime 2023-10-02 11-51 Stable test 18rps DOL\",\"bucket\":\"jmeter_OM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409832239\"}," +
+				"{\"application\":\"StartTime 2023-09-29 10-21Stability\",\"bucket\":\"jmeter_IntergraStand_BM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409831416\"}," +
+				"{\"application\":\"StartTime 2023-10-01 11-57 COMM_LT_all_sms_email_voice_bell_250_65_15_16_tps\",\"bucket\":\"jmeter_COMM\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=408945128\"}," +
+				"{\"application\":\"StartTime  SmokeCrush\",\"bucket\":\"jmeter_Pretium\",\"cfurl\":\"https://confluence.veon.com/pages/viewpage.action?pageId=409830287\"}]}")
 		}
 	} else {
 		err := SendGetRequest(c)
