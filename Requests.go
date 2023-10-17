@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
@@ -240,7 +241,9 @@ func GetHostList(c *fiber.Ctx) error {
 
 		// Отправка JSON-ответа
 		c.Set("Content-Type", "application/json")
-		return c.Send(jsonData)
+		fmt.Println(jsonData)
+		//return c.Send(jsonData)
+		return c.SendString("{\"host\":[\"http://qa-auto.vimpelcom.ru:8086\",\"http://ms-loadrtst026:8086\"]}")
 	} else {
 		err := SendGetRequest(c)
 		if err != nil {
